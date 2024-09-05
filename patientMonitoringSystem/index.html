@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Monitoring System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Patient Monitoring System</h1>
+        </header>
+
+        <!-- Login Form -->
+        <div class="login-form" id="loginForm">
+            <h2>Login</h2>
+            <form id="login">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <input type="number" id="age" placeholder="Age" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+        <!-- Patient Dashboard -->
+        <div class="dashboard" id="dashboard" style="display: none;">
+            <div class="patient-info">
+                <h2>Patient Details</h2>
+                <div class="info-card">
+                    <p><strong>Name:</strong> <span id="patientName"></span></p>
+                    <p><strong>Age:</strong> <span id="patientAge"></span></p>
+                    <p><strong>Disease:</strong> <span id="disease">None</span></p>
+                    <p><strong>Medication:</strong> <span id="currentMeds">None</span></p>
+                </div>
+            </div>
+
+            <!-- Disease Entry Form -->
+            <div class="disease-entry">
+                <h2>Enter Disease</h2>
+                <form id="diseaseForm">
+                    <input type="text" id="diseaseInput" placeholder="Enter your disease" required>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+
+            <div class="monitoring">
+                <h2>Live Monitoring</h2>
+                <div class="monitoring-card">
+                    <div class="monitoring-item">
+                        <h3>Blood Pressure</h3>
+                        <p id="bp">120/80 mmHg</p>
+                    </div>
+                    <div class="monitoring-item">
+                        <h3>Temperature</h3>
+                        <p id="temp">98.6°F</p>
+                    </div>
+                    <div class="monitoring-item">
+                        <h3>Pulse</h3>
+                        <p id="pulse">72 bpm</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <h2>Vital Signs Trends</h2>
+                <canvas id="vitalChart"></canvas>
+            </div>
+
+            <div class="history">
+                <h2>Patient History</h2>
+                <ul id="historyList"></ul>
+            </div>
+
+            <div class="prescriptions">
+                <h2>Prescriptions</h2>
+                <div id="prescriptionList"></div>
+            </div>
+
+            <div class="insights">
+                <h2>Patient Insights</h2>
+                <p>Average Blood Pressure: 125/85 mmHg</p>
+                <p>Average Temperature: 98.7°F</p>
+                <p>Average Pulse: 75 bpm</p>
+            </div>
+
+            <div class="alerts">
+                <h2>Alerts</h2>
+                <ul id="alertList"></ul>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 HealthCare Inc.</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
